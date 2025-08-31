@@ -28,7 +28,7 @@ const f = (x) => x + y; // almacena una funcion
 const filtro = a.map(f) // aplica una transformacion en base a una funcion que se da por parametro
 filtro.forEach((e,i) => console.log(e(i))) // recorre el array
 
-console.log(
+console.log( 
   a.reduce((a,b) => {
     if (a.include(b)){
       a.push(b)
