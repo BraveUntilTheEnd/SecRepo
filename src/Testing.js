@@ -1,5 +1,7 @@
 const javaScrip = (n) => (n*3);
 
+console.log("Aqui Estoy")
+
 function compose(valuePar){
     return function myFuntion(mf) {
         return mf + valuePar(mf)}
@@ -24,7 +26,7 @@ console.log(resultado)
 // reduce() utiliza una funcion con 2 parametros, el segundo es opcional
 
 const a = [3,4,12,5,8];
-const f = (x) => x + y; // almacena una funcion
+const f = (x,y) => x + y; // almacena una funcion
 const filtro = a.map(f) // aplica una transformacion en base a una funcion que se da por parametro
 filtro.forEach((e,i) => console.log(e(i))) // recorre el array
 

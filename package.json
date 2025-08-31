@@ -5,11 +5,9 @@
   "name": "paradigmas-de-programacion",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js",
-    "dev": "nodemon Testing.js",
+    "dev": "nodemon src/Testing.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
