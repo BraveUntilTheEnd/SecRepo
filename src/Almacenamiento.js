@@ -1,16 +1,16 @@
-const javaScrip = (n) => (n*3);
+const javaScrip = (n) => {n*3}; // crea una funcion que multiplica por 3 al valor ingresado
 
-console.log("Aqui Estoy")
-
-function compose(valuePar){
-    return function myFuntion(mf) {
-        return mf + valuePar(mf)}
+function compose(valuePar){ // crea una funcion que retorna otra funcion,
+    return function myFuntion(mf) { // se llaman funciones de primer orden o
+        return mf + valuePar(mf)} //ciudadanos de primer orden
 } 
-let resultado = compose(javaScrip)(3)
-console.log(resultado)
+let resultado = compose(javaScrip)(3) // lo que termina haciendo la funcion es el "3" que se le pasa por parametro
+console.log(resultado) // le aplica la funcion javascrip del principio multiplicandolo por 3, luego le suma el valor que se le dio a
+// al siguiente parametro de javascrip que lo almacena en mf, por ultimo imprime el valor de javascrip(3*3=9) + mf (3)
+// dando por consola el valor 12
 
 //--------------------------------------------------------------------------------------------------
-const fn = function (n) { return n * 3 }
+const fn = function (n) { n * 3 }
 
 function compose(paramFn) {
   return function(paramValue) {
@@ -26,7 +26,7 @@ console.log(resultado)
 
 const y = 1
 const a = [3,4,12,5,8]
-const f = (x) => x + y // almacena una funcion
+const f = (x) => x + y // almacena una funcion que suma 2 valores
 const filtro = a.map(f) // aplica una transformacion en base a una funcion que se da por parametro
 filtro.forEach((e,i) => console.log(e)) // recorre el array
 

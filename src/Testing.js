@@ -9,3 +9,7 @@ const d = (c)=>{
   }
 }
 console.log(d(c))
+
+
+let val 
+const t = (val = () => {})
