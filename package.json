@@ -1,16 +1,26 @@
 {
-  "dependencies": {
-    "nodemon": "^3.1.10"
-  },
   "name": "paradigmas-de-programacion",
   "version": "1.0.0",
   "description": "",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^30.1.3",
+    "nodemon": "^3.1.10",
+    "test": "^3.3.0"
+  },
   "scripts": {
-    "dev": "nodemon src/Testing.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon Primer-proyecto/src/Testing.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BraveUntilTheEnd/SecRepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BraveUntilTheEnd/SecRepo/issues"
+  },
+  "homepage": "https://github.com/BraveUntilTheEnd/SecRepo#readme"
 }
