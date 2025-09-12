@@ -5,7 +5,7 @@ function compose(valuePar){ // crea una funcion que retorna otra funcion,
         return mf + valuePar(mf)} //ciudadanos de primer orden
 } 
 let resultado = compose(javaScrip)(3) // lo que termina haciendo la funcion es el "3" que se le pasa por parametro
-console.log(resultado) // le aplica la funcion javascrip del principio multiplicandolo por 3, luego le suma el valor que se le dio a
+//console.log(resultado) // le aplica la funcion javascrip del principio multiplicandolo por 3, luego le suma el valor que se le dio a
 // al siguiente parametro de javascrip que lo almacena en mf, por ultimo imprime el valor de javascrip(3*3=9) + mf (3)
 // dando por consola el valor 12
 
@@ -19,7 +19,7 @@ function compose(paramFn) {
 }
 
 resultado = compose(fn)(3)
-console.log(resultado)
+//console.log(resultado)
 
 //-----------------------------------------------------------------------------------
 
@@ -35,11 +35,11 @@ filtro.forEach((e,i) => console.log(e)) // recorre el array
 // pensar como utilizar un every(una funcion) como si fuera un some(una funcion) y viceversa
  
 const numero = [2,4,6,8];
-console.log(numero.every(x => x % 2 === 0)) // Todos cumplen la condicion
+//console.log(numero.every(x => x % 2 === 0)) // Todos cumplen la condicion
 
-console.log(!numero.some(x => x % 2 !== 0)) // No hay ni uno que no cumpla la condicion
+//console.log(!numero.some(x => x % 2 !== 0)) // No hay ni uno que no cumpla la condicion
 
-console.log(!numero.every(x => x % 2 !== 0)) // Ninguno no cumple la condicion
+//console.log(!numero.every(x => x % 2 !== 0)) // Ninguno no cumple la condicion
 
 //-----------------------------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ const clienYprodu = ventas.map(
 //console.log(clienYprodu)
 
 const arra = [1,3,5,7,9]
-console.log(...arra)
+//console.log(...arra)
 
 // args funciona par asignar paramtros de forma indefinida e infinita, nunca se usa como primer elemento en una funcion
 const fp = (f, ...args)=>{
@@ -152,5 +152,8 @@ return args.reduce((a,b) => a +b, 0)
 const agregarEle = (arr, e)=>{
   return [...arr, e]
 }
-console.log(agregarEle(arra, 10))
+//console.log(agregarEle(arra, 10))
+
+// Module.exports = {}
+// nos sive para exportar metodos, arrays y objetos a otros archivos donde podamos necesitarlos
 
