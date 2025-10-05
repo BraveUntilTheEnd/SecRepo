@@ -1,10 +1,12 @@
 const Servicios =[
         {
             Manicura: {
-                Decoracion: 1, EsmalteSemiperma: 2, Recostrucción: 3, Exfoliacion: 4, TratamientoNutricion:5
+                Tradicional: 1, Semipermanente: 2, French: 3, Extras:{
+                    FullSetConDiseño: 1, BabyBoomer: 2, CappingPolygel: 3, CappingAcrilicoUGel: 4, UñasEsculpidas: 5, Softgel: 6
+                }
             },
             Pedicura:{
-                Spa: 1, Semipermanente: 2, TrataPodologicos: 3, TratamientoNutricion: 4, Decoracion: 5
+                BellezaTradicional: 1, BellezaSemipermanente: 2, PedicuraCompleta: 3
             },
             Depilacion: {
                 
