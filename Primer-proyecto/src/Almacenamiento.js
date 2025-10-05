@@ -155,7 +155,7 @@ const ventas = [ // en este caso estoy asignando a la const ventas un array [] d
 
 //agrega el nombre de cliente que compro y la descripcion del producto comprado
 const clienYprodu = ventas.map(
-  v=> {
+  (v)=> {
     return {...v,nombre: clientes.find((c)=> c.id == v.id).nombre, descripcion:producto.find((p)=>p.id == v.id).descripcion  }
   }
 )
