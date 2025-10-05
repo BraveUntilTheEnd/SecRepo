@@ -60,4 +60,4 @@ const bucarProductoPorNombreConError = (valor) => {
 };
 console.log(bucarProductoPorNombreConError("Auriculares"))
 
-const 
+const x = 1;
