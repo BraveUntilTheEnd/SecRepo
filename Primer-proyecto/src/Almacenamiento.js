@@ -156,7 +156,7 @@ const ventas = [ // en este caso estoy asignando a la const ventas un array [] d
 //agrega el nombre de cliente que compro y la descripcion del producto comprado
 const clienYprodu = ventas.map(
   (v)=> {
-    return {...v,nombre: clientes.find((c)=> c.id == v.id).nombre, descripcion:producto.find((p)=>p.id == v.id).descripcion  }
+    return {...v, nombre: clientes.find((c)=> c.id == v.id).nombre, descripcion:producto.find((p)=>p.id == v.id).descripcion  }
   }
 )
 //console.log(clienYprodu)
@@ -166,7 +166,7 @@ const arra = [1,3,5,7,9]
 
 // args funciona par asignar paramtros de forma indefinida e infinita, nunca se usa como primer elemento en una funcion
 const fp = (f, ...args)=>{
-return args.reduce((a,b) => a +b, 0)
+return args.reduce((a,b) => a + b, 0)
 }
 
 // el spread (...) separa en elementos a los arrays [1,2,3] = 1 2 3. y a los objetos los toma por atributos
