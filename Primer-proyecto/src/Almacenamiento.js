@@ -180,3 +180,123 @@ const agregarEle = (arr, e)=>{
 // Module.exports = {}
 // nos sive para exportar metodos, arrays y objetos a otros archivos donde podamos necesitarlos
 
+const productos = [{
+    id: 1, 
+    nombre: "Auriculares",
+    precio: 10000,
+    categoriaID: 1 
+},
+{
+    id: 2 ,
+    nombre: "Computadora",
+    precio: 310000,
+    categoriaID: 1
+},
+{
+    id: 3,
+    nombre: "Cafe",
+    precio: 500,
+    categoriaID: 2
+},
+{
+    id: 4,
+    nombre: "Campera",
+    precio: 3200,
+    categoriaID: 3
+},
+{
+    id: 5,
+    nombre: "Buzo",
+    precio: 2400,
+    categoriaID: 3
+},
+{
+    id: 6,
+    nombre: "Chocolatada",
+    precio: 400,
+    categoriaID: 2
+}]
+
+const Categorias = [{
+    id: 1,
+    descripcion: "Electrónica",
+    esImportada: true
+  },
+  {
+    id: 2,
+    descripcion: "Alimentos",
+    esImportada: false
+},
+{
+    id: 3,
+    descripcion: "Indumentaria",
+    esImportada: true
+}]
+const bucarProductoPorNombreConError = (valor) => {
+  const productoEncontrado = productos.find((p) => p.nombre == valor);
+  if (productoEncontrado) return productoEncontrado;
+  else throw Error("Produto no encontrado.");
+};
+//console.log(bucarProductoPorNombreConError("Auriculares"))
+
+const buscarCategoriaconid = (valor)=>{
+    const cateEncontrada = Categorias.find((c)=> c.id == valor);
+    if(cateEncontrada) 
+        return cateEncontrada
+    else throw Error("La categoria solicitada no es valida")
+}
+//console.log(buscarCategoriaconid(2))
+
+const BuscarPromedio = (arrayObjeto)=>{
+    const acumulador = arrayObjeto.reduce((a,b) => a + b.precio, 0)
+    const promedio = acumulador / arrayObjeto.length
+    return promedio
+}
+//console.log(BuscarPromedio(productos))
+
+//Mostrar productos unidos a tu descripcion de categoria
+const unificarArrays = (productos, categorias) => {
+    return productos.map((a)=> {
+        const cate = categorias.find((c)=>c.id == a.categoriaID);
+            return{
+                nombre: a.nombre,
+                precio: a.precio,
+                categorias:{
+                    id: cate.id,
+                    descripcion: cate.descripcion,
+                    esImportada: cate.esImportada
+                }
+            }
+        }    
+    )
+}
+//console.log(unificarArrays(productos, Categorias))
+
+// Mostrar los productos de una categoria especifica
+
+const MostarProductosxCategoria = (producto, buscado) => {
+    const busqueda = producto.filter((p)=> p.categoriaID == buscado)
+    if (busqueda.length == 0){ // JS hace comparaciones a nivel de referencia, por eso aqui comparo el contenido y no con otro array vacio
+        return console.log("No se ha encontrado la categoria que busca")    
+    } else {
+        return busqueda
+    }
+}
+//console.log(MostarProductosxCategoria(productos, 3))
+
+// Escriba una función que reciba por parámetro un nombre y retorne el producto que coincida exactamente con ese nombre utilizando.
+const imprimirProductoxNombre = (n)=>{
+    const busqueda2 = productos.filter((p)=> p.nombre == n)
+    return (busqueda2.length == 0) ? ("No se encontro el producto: " + n) :  busqueda2
+}
+//console.log(imprimirProductoxNombre("Amor"))
+
+// Escriba una función que no reciba parámetros y retorne el producto con menor precio
+
+const imprimirSinParametrosReduce = ()=> {    
+    const acumulador = productos.reduce((a,b) => (a.precio <= b.precio)? a : b) 
+    return acumulador
+}
+
+console.log (`Menor Precio:`)
+console.log(imprimirSinParametrosReduce())
