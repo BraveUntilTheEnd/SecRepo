@@ -52,7 +52,7 @@ const y = 1
 const a = [3,4,12,5,8]
 const f = (x) => x + y // almacena una funcion que suma 2 valores
 const filtro = a.map(f) // aplica una transformacion en base a una funcion que se da por parametro
-filtro.forEach((e,i) => console.log(e)) // recorre el array
+filtro.forEach((e) => console.log(e)) // recorre el array
 
 //-----------------------------------------------------------------------------------------------
 
