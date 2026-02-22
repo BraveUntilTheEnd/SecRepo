@@ -301,7 +301,9 @@ const imprimirSinParametrosReduce = ()=> {
 //console.log (`Menor Precio:`)
 //console.log(imprimirSinParametrosReduce())
 
-/* dibuja cuadrados con un simbolo y tamaño otorgados
+/*
+--------------------- dia 3 adventJS ---------------------------------------
+dibuja cuadrados con un simbolo y tamaño otorgados
 function drawGift(size, symbol) {
   let inicio = ""
   let medio = ""
@@ -331,7 +333,7 @@ function drawGift(size, symbol) {
 console.log(drawGift(2, "%"))
 console.log(drawGift(3, "%"))
 console.log(drawGift(5, "%"))
-dia 4 adventjs
+--------------------- dia 4 adventjs --------------------------------------
 function decodeSantaPin(code) {
   let codigoFinal = "";
   const primerFiltro = code.split("]");
@@ -360,5 +362,56 @@ function decodeSantaPin(code) {
   return codigoFinal;
 }
 const codeo = "[1--][1-+][8++][7++]"
-console.log(decodeSantaPin(codeo))*/
+console.log(decodeSantaPin(codeo))
+
+------------------ Resolucion dia 5 adventJS ---------------------
+
+function timeUntilTakeOff(fromTime, takeOffTime) {
+  function tomandoValores(valor) {
+    const filtro = /(\d+)\*(\d+)\*(\d+)@(\d+)\|(\d+)\|(\d+)/
+    const valoresFijos = valor.match(filtro);
+    if (!valoresFijos) {
+        return 0
+    }
+    const [datoInutil, anio, mes, dia, hora, minuto, segundo] = valoresFijos
+    return Date.UTC(anio, mes - 1, dia, hora, minuto, segundo)
+  }
+  const tiempoDesde = tomandoValores(fromTime)
+  const tiempoHasta = tomandoValores(takeOffTime)
+  const diferenciaSeg = tiempoHasta - tiempoDesde
+  return Math.floor(diferenciaSeg / 1000)
+}
+const takeoff = '2025*12*25@00|00|00 NP'
+console.log(timeUntilTakeOff('2025*12*24@23|59|30 NP', takeoff))
+
+------------------ dia 6 Resuelto adventJS -----------------------------------
+unction matchGloves(gloves) {
+  let totalGuantesPares = []
+  let usados = new Array(gloves.length).fill(false); 
+  for (let i = 1; i < gloves.length; i++){
+    if (usados[i]) continue
+    for (let j = 0 ; j < i; j++){
+       if (usados[j]) continue
+       if (gloves[i].color == gloves[j].color && gloves[i].hand !== gloves[j].hand) {
+          totalGuantesPares.push(gloves[i].color)
+          usados[i] = true
+          usados[j] = true
+          break
+       }
+    }
+  }
+  return totalGuantesPares
+}
+const guantes = [
+  {hand: "L", color: "red"},
+  {hand: "L", color: "blue"},
+  {hand: "R", color: "blue"},
+  {hand: "R", color: "red"},
+  {hand: "L", color: "red"},
+  {hand: "R", color: "red"},
+  {hand: "L", color: "red"},
+  {hand: "R", color: "red"}
+]
+console.log(matchGloves(guantes))
+*/
 
